@@ -34,7 +34,7 @@
                 on-response="handleResponse"
                 on-error="toggleError">
         </iron-ajax>
-        <div hidden$="[[!isVisible]]">
+        <div id="container" hidden$="[[!isVisible]]">
             <paper-dropdown-menu noink no-animations Label="Language">
                 <paper-listbox
                         slot="dropdown-content"
@@ -95,7 +95,7 @@
 
             handleResponse() {
                 this.set('data', this.$.http.lastResponse);
-                this.dispatchEvent(new CustomEvent('lang-changed', {
+                    this.dispatchEvent(new CustomEvent('lang-changed', {
                     bubbles: true,
                     composed: true,
                     detail: this.data

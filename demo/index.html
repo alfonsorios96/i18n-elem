@@ -29,10 +29,6 @@
                 <dom-bind>
                     <template>
                         <h2 id="title"></h2>
-                        <template is="dom-repeat" items="[[languages]]" as="language">
-                            <paper-button selected-item="[[language.key]]" on-tap="handler">[[language.name]]
-                            </paper-button>
-                        </template>
                         <i18n-elem language-selected="[[languageSelected]]" path="[[path]]" id="i18n"
                                    available-languages="[[languages]]" is-visible="[[isVisible]]"></i18n-elem>
                     </template>
@@ -70,7 +66,7 @@
                         }
                     ];
                     container.path = './data';
-                    container.isVisible = true;
+                    container.isVisible = false;
 
                     container.handler = (event) => {
                         container.languageSelected = null;
